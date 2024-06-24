@@ -242,8 +242,7 @@ class Frame(tk.Frame):
         pelis = []
         for i in aux:
             pelis.append(i[1])
-    
-        print(aux)
+
         #concatenemos el nuevo array
         self.peliculas = ['Seleccione una'] + pelis
         self.entry_pelicula = ttk.Combobox(self, state="readonly")
@@ -461,8 +460,6 @@ class Frame(tk.Frame):
             self.puntos.get(),
             self.observaciones.get(),
         )
-        print(puntos)        
-
         if self.id_puntos == None:
             guardar_puntuacion(puntos)
         else:
