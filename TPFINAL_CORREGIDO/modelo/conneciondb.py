@@ -2,7 +2,7 @@ import sqlite3
 
 class ConeccionDB():
     def __init__(self):
-        self.base_datos = 'Tecno3F/Intermedio/TPFINAL/ddbb/peliculas.db'
+        self.base_datos = 'ddbb/peliculas.db'
         self.conexion = sqlite3.connect(self.base_datos)
         self.cursor = self.conexion.cursor()   
     

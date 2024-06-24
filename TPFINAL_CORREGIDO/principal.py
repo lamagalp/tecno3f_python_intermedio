@@ -4,7 +4,7 @@ from cliente.vista import Frame, barrita_menu
 def main():
     ventana = tk.Tk()
     ventana.title('Listado Peliculas')
-    ventana.iconbitmap('Tecno3F/Intermedio/material de clase/CRUD2.1/CRUD2.1/img/videocamara.ico')
+    ventana.iconbitmap('img/videocamara.ico')
     ventana.resizable(0,0)
 
     app = Frame(root = ventana)
