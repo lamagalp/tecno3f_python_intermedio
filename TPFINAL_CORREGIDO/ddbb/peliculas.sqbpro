@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Desarrollo/PYTHON/Tecno3F/Intermedio/TPFINAL/ddbb/peliculas.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure pragmas query browser" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1795"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,6:mainGenero"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Genero" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="40"/><column index="2" value="57"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE IF NOT EXISTS Genero(
+            ID INTEGER NOT NULL, 
+            Nombre VARCHAR(50),
+            PRIMARY KEY (ID AUTOINCREMENT)
+            );
+
+            CREATE TABLE IF NOT EXISTS Peliculas(
+            ID INTEGER NOT NULL, 
+            Nombre VARCHAR(150),
+            Duracion VARCHAR(4),
+            Genero INTEGER,
+            PRIMARY KEY (ID AUTOINCREMENT),
+            FOREIGN KEY (Genero) References Genero(ID)
+            );
+
+            CREATE TABLE IF NOT EXISTS Usuarios(
+            ID INTEGER NOT NULL, 
+            Nombre VARCHAR(50),
+            Apellido VARCHAR(50),
+            PRIMARY KEY (ID AUTOINCREMENT)
+            );
+
+            CREATE TABLE IF NOT EXISTS Puntuaciones(
+            ID INTEGER NOT NULL, 
+            Puntuacion INTEGER NOT NULL,
+            Observaciones VARCHAR(200),    
+            Pelicula INTEGER NOT NULL,
+			Usuario INTEGER NOT NULL,        
+            PRIMARY KEY (ID AUTOINCREMENT),
+            FOREIGN KEY (Pelicula) References Peliculas(ID)
+            FOREIGN KEY (Usuario) References Usuarios(ID)
+            );           </sql><current_tab id="0"/></tab_sql></sqlb_project>
